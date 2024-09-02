@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Sign Up Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,43 +20,24 @@
      </div> 
     <div class="container">
         <div class="form-box">
-            <h1>Login</h1>
-            <form id="loginForm">
+            <h1>Sign Up</h1>
+            <form action="#" method="post">
                 <div class="input-group">
                     <input type="text" name="username" placeholder="Username" required>
                 </div>
                 <div class="input-group">
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="email" name="email" placeholder="Email" required>
                 </div>
-                <div class="input-group show-password">
-                    <input type="checkbox" id="togglePassword">
-                    <label for="togglePassword">Show Password</label>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
-                <button type="submit" class="btn">Login</button>
-                <p class="sign-up-text">Don't have an account? <a href="index.html">Sign up</a></p>
+                <div class="input-group">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="login-text">Already have an account? <a href="login.html">Login here</a></p>
             </form>
         </div>
     </div>
-
-    <script>
-        document.getElementById("togglePassword").addEventListener("change", function() {
-            const passwordField = document.getElementById("password");
-            passwordField.type = this.checked ? "text" : "password";
-        });
-
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            const username = document.querySelector('[name="username"]').value;
-            const password = document.querySelector('[name="password"]').value;
-
-            // Simple front-end check (you would typically validate with a back-end server)
-            if (username === "zeandrei" && password === "militante") {
-                window.location.href = "dashboard.html"; // Redirect to the dashboard
-            } else {
-                alert("Invalid credentials. Please try again.");
-            }
-        });
-    </script>
 </body>
 </html>
